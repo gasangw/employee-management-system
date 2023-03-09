@@ -7,33 +7,33 @@ const Create = () => {
     const [jobTitle, setJobTitle] = useState("");
     const [department, setDepartment] = useState("");
     
-    // const changeName = (e) => {
-    //   setName(e.target.value);
-    // };
+    const changeName = (e) => {
+      setName(e.target.value);
+    };
   
-    // const changeEmail = (e) => {
-    //   setEmail(e.target.value);
-    // };
+    const changeEmail = (e) => {
+      setEmail(e.target.value);
+    };
   
-    // const changeJobTitle = (e) => {
-    //   setJobTitle(e.target.value);
-    // };
+    const changeJobTitle = (e) => {
+      setJobTitle(e.target.value);
+    };
   
-    // const changeDepartment = (e) => {
-    //   setDepartment(e.target.value);
-    // };
+    const changeDepartment = (e) => {
+      setDepartment(e.target.value);
+    };
 
-    // const handleSubmission =(e) => {
-    //     e.preventDefault();
-    //     axios.post('http://localhost:3000/employees', {
-    //      fullName: name,
-    //      email: email,
-    //      jobTitle: jobTitle,
-    //      department: department
-    //    })
-    //    .then(response => response.data)
+    const handleSubmission =(e) => {
+        e.preventDefault();
+        axios.post('http://localhost:3000/employees', {
+         fullName: name,
+         email: email,
+         jobTitle: jobTitle,
+         department: department
+       })
+       .then(response => response.data)
        
-    // }
+    }
 
 
    return (
