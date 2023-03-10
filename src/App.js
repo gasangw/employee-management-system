@@ -6,6 +6,7 @@ import About from './components/about/About';
 import Employee from './components/employee/Employee';
 import Contact from './components/contact/Contact';
 import OneEmployee from './components/employee/OneEmployee';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
         <Route path='/employee/:id' element={<OneEmployee />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
+      <Footer/>
     </div>
+    
   );
 }
 
