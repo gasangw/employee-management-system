@@ -1,0 +1,44 @@
+.contact {
+    background-image: url(../Images/bg-c.png);
+ 
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+   
+    
+    
+}
+.contactinfo {
+    margin: 80px  0 ;
+    background-color: rgb(79, 79, 218);
+    width: 33.3%;
+    border-radius: 13px;
+    color: aliceblue;
+
+}
+
+.contactinfo .titlle {
+    color: black;
+    margin-top: 4rem;
+    display: flex;
+    text-align: left;
+    margin-left: 2rem;
+}
+.contactinfo .detail {
+    
+    margin-top: 1rem;
+    text-align: left;
+    margin-left: 2rem;
+}
+.contactinfo .detail h3 {
+    background-color: #222;
+    margin: 2rem 0;
+    color: white;
+}
+.detail > h3 {
+display: flex;
+padding: 0.3rem;
+justify-content: baseline;
+gap: 0.5rem;
+}
