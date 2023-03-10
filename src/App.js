@@ -5,7 +5,7 @@ import Home from './components/home/Home';
 import About from './components/about/About';
 import Employee from './components/employee/Employee';
 import Contact from './components/contact/Contact';
-import Create from './components/create/Create';
+import OneEmployee from './components/employee/OneEmployee';
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/employee' element={<Employee />} />
+        <Route path='/employee/:id' element={<OneEmployee />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/create' element={<Create />} />
       </Routes>
     </div>
   );

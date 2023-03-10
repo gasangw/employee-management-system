@@ -1,0 +1,11 @@
+.list-employees {
+    display: grid;
+    margin: 0 1.6rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.btn {
+    display: flex;
+    margin: 1.6rem;
+}

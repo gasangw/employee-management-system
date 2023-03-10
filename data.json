@@ -1,95 +1,39 @@
 {
   "employees": [
     {
-      "id": 1,
-      "fullName": "Thomas Gasangwa",
-      "email": "thomasgasangwa@gmail.com",
-      "jobTitle": "Front-end developer",
-      "department": "User Interface Department"
-    },
-    {
-      "id": 2,
-      "fullName": "Iradukunda Lea",
-      "email": "iradukundalea@gmail.com",
-      "jobTitle": "Front-end developer",
-      "department": "User Interface Department"
-    },
-    {
-      "id": 3,
-      "fullName": "Niyomufasha Fabrice",
-      "email": "niyomufasha@gmail.com",
-      "jobTitle": "Front-end developer",
-      "department": "User Interface Department"
-    },
-    {
-      "fullName": "",
-      "email": "",
-      "jobTitle": "",
-      "department": "",
-      "id": 4
-    },
-    {
-      "fullName": "",
-      "email": "",
-      "jobTitle": "",
-      "department": "",
-      "id": 5
-    },
-    {
-      "fullName": "james",
-      "email": "james@gmail.com",
-      "jobTitle": "frontend developer",
-      "department": "my department",
-      "id": 6
-    },
-    {
-      "fullName": "tom",
-      "email": "thom@gmail.com",
-      "jobTitle": "jkjjjjjjjjjjjj",
-      "department": "oooooooooooooo",
-      "id": 7
-    },
-    {
-      "fullName": "hhhhhhhhh",
-      "email": "hhhh@gmail.com",
-      "jobTitle": "uuuuuu",
-      "department": "uuuuuuu",
-      "id": 8
-    },
-    {
-      "fullName": "leah",
-      "email": "lea@gmail.com",
-      "jobTitle": "frontend developer",
-      "department": "my department",
-      "id": 9
-    },
-    {
-      "fullName": "toto",
-      "email": "toto@gmail.com",
-      "jobTitle": "frontend developer",
-      "department": "frontend",
-      "id": 10
-    },
-    {
-      "fullName": "fab",
-      "email": "toto@gmail.com",
-      "jobTitle": "jkjjjjjjjjjjjj",
-      "department": "my department",
-      "id": 11
-    },
-    {
-      "fullName": " ",
-      "email": "toto@gmail.com",
-      "jobTitle": "jkjjjjjjjjjjjj",
-      "department": "my department",
-      "id": 12
-    },
-    {
-      "fullName": " ",
-      "email": "toto@gmail.com",
-      "jobTitle": "jkjjjjjjjjjjjj",
-      "department": "my department",
+      "fullName": " Ayan Agatesi",
+      "email": "ayan@gmail.com",
+      "jobTitle": "Data Structure",
+      "department": "Data Science department",
       "id": 13
+    },
+    {
+      "fullName": "Muzungu Patrick",
+      "email": "muzungupatrick@gmail.com",
+      "jobTitle": "Data Scientist",
+      "department": "Data Science",
+      "id": 14
+    },
+    {
+      "fullName": "James Erick",
+      "email": "erick@gmail.com",
+      "jobTitle": "Backend developer",
+      "department": "Node Department",
+      "id": 15
+    },
+    {
+      "fullName": "Fabric Niyomufasha",
+      "email": "fabric@gmail.com",
+      "jobTitle": "Frontend developer",
+      "department": "React Department",
+      "id": 16
+    },
+    {
+      "fullName": "Fabric Niyomufasha",
+      "email": "fabric@gmail.com",
+      "jobTitle": "Secretary General",
+      "department": "Data Science",
+      "id": 17
     }
   ]
 }
