@@ -1,44 +1,57 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import axios from 'axios'
 
-const Create = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [jobTitle, setJobTitle] = useState("");
-    const [department, setDepartment] = useState("");
-    
-    const changeName = (e) => {
-      setName(e.target.value);
-    };
-  
-    const changeEmail = (e) => {
-      setEmail(e.target.value);
-    };
-  
-    const changeJobTitle = (e) => {
-      setJobTitle(e.target.value);
-    };
-  
-    const changeDepartment = (e) => {
-      setDepartment(e.target.value);
-    };
+const OneEmployee = () => {
+  const GoTo = useNavigate();
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const [employees, setEmployees] = useState({
+    fullName: '',
+    email: '',
+    jobTitle: '',
+    department: ''
+  });
 
-    const handleSubmission =(e) => {
-        e.preventDefault();
-        axios.post('http://localhost:3000/employees', {
-         fullName: name,
-         email: email,
-         jobTitle: jobTitle,
-         department: department
-       })
-       .then(response => response.data)
-       
+  useEffect(() => {
+    if (id === "ID") return;
+
+    fetch(`http://localhost:3000/employees/${id}`)
+      .then((response) => response.json())
+      .then((myData) => setEmployees(myData));
+  }, [id]);
+
+
+  const handleChange =(e)=> {
+    const employeesClone = {...employees}
+    employeesClone[e.target.name] = e.target.value
+    setEmployees(employeesClone)
+  }
+
+  const handleSubmit =(e)=> {
+    e.preventDefault();
+    if(id === 'ID'){
+        axios.post('http://localhost:3000/employees', employees)
+          .then(response => response.data)
+        return navigate('/employee')
+    }else {
+        axios.put(`http://localhost:3000/employees/${id}`, employees)
+        .then(response => response.data)
+        return navigate('/employee')
     }
-
-
-   return (
+  }
+  return (
     <div>
-      <form onSubmit={handleSubmission}>
+      <button
+        type="button"
+        onClick={() => GoTo("/employee")}
+        class="focus:outline-none text-white bg-purple-700 hover:bg-orange-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 btn"
+      >
+        All Employees
+      </button>
+      <div>
+      <form>
         <div class="mb-6">
           <label
             for="fullname"
@@ -48,10 +61,11 @@ const Create = () => {
           </label>
           <input
             type="text"
-            id="fullname"
+            name="fullName"
+            value={employees.fullName}
+            onChange={handleChange}
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="your fullName"
-            onChange={changeName}
             required
           />
         </div>
@@ -64,8 +78,9 @@ const Create = () => {
           </label>
           <input
             type="email"
-            id="email"
-            onChange={changeEmail}
+            name="email"
+            value={employees.email}
+            onChange={handleChange}
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="example@gmail.com"
             required
@@ -80,8 +95,9 @@ const Create = () => {
           </label>
           <input
             type="text"
-            id="job-title"
-            onChange={changeJobTitle}
+            name="jobTitle"
+            value={employees.jobTitle}
+            onChange={handleChange}
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="your job title"
             required
@@ -96,8 +112,9 @@ const Create = () => {
           </label>
           <input
             type="text"
-            id="department"
-            onChange={changeDepartment}
+            name="department"
+            value={employees.department}
+            onChange={handleChange}
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="your department"
             required
@@ -105,13 +122,14 @@ const Create = () => {
         </div>
         <button
           type="submit"
+          onClick={handleSubmit}
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          Create Employee
+          { id === 'ID' ? 'Create Employee' : 'Update Employee'}
         </button>
       </form>
+      </div>
     </div>
   );
 };
-
-export default Create;
+export default OneEmployee;
